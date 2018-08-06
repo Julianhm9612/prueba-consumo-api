@@ -36,7 +36,12 @@
         <mat-cell *matCellDef="let film" (click)="openSnackBar(film.description, 'OK')"> <mat-icon>description</mat-icon> </mat-cell>
     </ng-container>
 
-    
+    <ng-container matColumnDef="ver">
+        <mat-header-cell *matHeaderCellDef> Ver </mat-header-cell>
+        <mat-cell *matCellDef="let film" >
+          <a [routerLink]="['/peliculas/ver', film.id]"> <mat-icon>remove_red_eye</mat-icon> </a>
+        </mat-cell>
+    </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let film; columns: displayedColumns;"></mat-row>

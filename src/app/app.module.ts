@@ -30,13 +30,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { ListComponent } from './list/list.component';
+import { PeliculaComponent } from './pelicula/pelicula.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavComponent,
-    ListComponent
+    ListComponent,
+    PeliculaComponent
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Observable } from 'rxjs';
-import { of as observableOf } from 'rxjs';
-import { BehaviorSubject } from 'rxjs';
-import { merge } from 'rxjs';
 
 // angular material
 import { DataSource } from '@angular/cdk/collections';
@@ -26,7 +22,7 @@ import { routerTransition } from '../app.routing.animation';
 })
 export class ListComponent implements OnInit {
   public dataSource: MatTableDataSource<Film>;
-  public displayedColumns: string[] = ['title', 'director', 'producer', 'release_date', 'rt_score', 'detalle'];
+  public displayedColumns: string[] = ['title', 'director', 'producer', 'release_date', 'rt_score', 'detalle', 'ver'];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -39,6 +35,7 @@ export class ListComponent implements OnInit {
   }
 
   ngOnInit() {
+    // consultar películas
     this.filmsService.getFilms('films').subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
