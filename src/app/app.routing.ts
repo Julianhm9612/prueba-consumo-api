@@ -16,7 +16,7 @@ const routes: Routes = [
       { path: 'ver/:id', component: PeliculaComponent }
     ]
   },
-  { path: "**", component: HomeComponent },
+  { path: "**", component: HomeComponent }
 ];
 
 @NgModule({
