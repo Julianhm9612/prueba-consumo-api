@@ -12,11 +12,15 @@ import { FilmsService } from '../films.service';
 // modelos
 import { Film } from '../models/film';
 
+// animaciones
+import { routerTransition } from '../app.routing.animation';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  styleUrls: ['./list.component.css'],
+  animations: [routerTransition()],
+  host: {'[@routerTransition]': ''}
 })
 export class ListComponent implements OnInit {
   public dataSource: MatTableDataSource<Film>;
