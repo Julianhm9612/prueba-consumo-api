@@ -1,10 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DataSource } from '@angular/cdk/collections';
-import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import { Observable } from 'rxjs';
 import { of as observableOf } from 'rxjs';
 import { BehaviorSubject } from 'rxjs';
 import { merge } from 'rxjs';
+
+// angular material
+import { DataSource } from '@angular/cdk/collections';
+import { MatPaginator, MatSort, MatTableDataSource, MatSnackBar } from '@angular/material';
 
 // servicio
 import { FilmsService } from '../films.service';
@@ -24,12 +26,15 @@ import { routerTransition } from '../app.routing.animation';
 })
 export class ListComponent implements OnInit {
   public dataSource: MatTableDataSource<Film>;
-  public displayedColumns: string[] = ['title', 'director', 'producer', 'release_date', 'rt_score'];
+  public displayedColumns: string[] = ['title', 'director', 'producer', 'release_date', 'rt_score', 'detalle'];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private filmsService: FilmsService) {
+  constructor(
+    private filmsService: FilmsService,
+    public snackBar: MatSnackBar
+  ) {
     
   }
 
@@ -45,9 +50,24 @@ export class ListComponent implements OnInit {
     
   }
 
+  /**
+   * Filtro de la tabla
+   * @param filterValue 
+   */
   applyFilter(filterValue: string) {
     filterValue = filterValue.trim(); // Remove whitespace
     filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
     this.dataSource.filter = filterValue;
+  }
+
+  /**
+   * Abrir modal
+   * @param message 
+   * @param action 
+   */
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 6000,
+    });
   }
 }

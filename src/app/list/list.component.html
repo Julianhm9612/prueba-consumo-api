@@ -31,6 +31,13 @@
       <mat-cell *matCellDef="let film">{{ film.rt_score }}</mat-cell>
     </ng-container>
 
+    <ng-container matColumnDef="detalle">
+        <mat-header-cell *matHeaderCellDef> Descripción </mat-header-cell>
+        <mat-cell *matCellDef="let film" (click)="openSnackBar(film.description, 'OK')"> <mat-icon>description</mat-icon> </mat-cell>
+    </ng-container>
+
+    
+
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let film; columns: displayedColumns;"></mat-row>
   </mat-table>
