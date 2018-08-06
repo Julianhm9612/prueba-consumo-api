@@ -1,0 +1,41 @@
+<div>
+  <div class="buscar">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar">
+    </mat-form-field>
+  </div>
+
+  <mat-table class="mat-elevation-z8" [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Titulo </mat-header-cell>
+      <mat-cell *matCellDef="let film">{{ film.title }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="director">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Director </mat-header-cell>
+      <mat-cell *matCellDef="let film">{{ film.director }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="producer">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Productor </mat-header-cell>
+      <mat-cell *matCellDef="let film">{{ film.producer }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="release_date">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Año </mat-header-cell>
+      <mat-cell *matCellDef="let film">{{ film.release_date }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="rt_score">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Puntaje </mat-header-cell>
+      <mat-cell *matCellDef="let film">{{ film.rt_score }}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let film; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <mat-paginator
+    [pageSizeOptions]="[5]">
+  </mat-paginator>
+</div>

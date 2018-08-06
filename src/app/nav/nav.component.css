@@ -1,27 +1,22 @@
 .nav-initial {
-    background: transparent;
-  }
+    background: #00BCD4;
+    box-shadow: 0 4px 2px -2px gray;
+}
   
-  .nav-scroll {
-    background: #E53328;
-  }
-  
-  .nav-scroll ul #img-logo-seti {
-    width: 3rem;
-    margin: 0.5rem 0rem 0.5rem 0rem;
-  }
-  
-  nav {
-    position: fixed;
-    top: 0;
+.nav-initial ul #img-logo-app {
+    width: 5rem;
+    margin: 0.5rem 0rem 0rem 0rem;
+}
+
+nav {
     display: flex;
     justify-content: center;
     width: 100%;
     z-index: 1;
     transition: background-color 0.4s ease-out;
-  }
-  
-  nav ul {
+}
+
+nav ul {
     display: flex;
     justify-content: space-evenly;
     width: 80%;
@@ -29,54 +24,53 @@
     padding: 0;
     align-items: center;
     margin: 0;
-  }
-  
-  nav ul #img-logo-seti {
+}
+
+nav ul #img-logo-seti {
     width: 5rem;
     height: auto;
     margin: 1rem 0rem 1rem 0rem;
     transition: width 0.4s ease-out;
-  }
-  
-  nav ul li {
+}
+
+nav ul li {
     color: white;
     font-size: 13pt;
     letter-spacing: 1pt;
-  }
-  
-  nav ul li a {
+}
+
+nav ul li a {
     display: flex;
     position: relative;
     color: inherit;
     text-decoration: none;
     line-height: 24px;
     cursor: pointer;
-  }
-  
-  nav ul li a:before, nav ul li a:after {
+}
+
+nav ul li a:before, nav ul li a:after {
     content: '';
     position: absolute;
     transition: transform .5s ease;
-  }
-  
-  nav ul li a .mat-icon {
+}
+
+nav ul li a .mat-icon {
     margin-right: 5px;
-  }
-  
-  nav ul .link-hover-bottom {
+}
+
+nav ul .link-hover-bottom {
     padding-bottom: 0.3rem;
-  }
-  
-  nav ul .link-hover-bottom:before {
+}
+
+nav ul .link-hover-bottom:before {
     left: 0;
     bottom: 0;
     width: 100%;
     height: 2px;
     background: #e6e6e6;
     transform: scaleX(0);
-  }
-  
-  nav ul .link-hover-bottom:hover:before {
+}
+
+nav ul .link-hover-bottom:hover:before {
     transform: scaleX(1);
-  }
-  
+}  

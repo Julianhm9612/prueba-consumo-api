@@ -1,12 +1,18 @@
 <nav id="navbar" class="nav-initial">
   <ul>
-    <div id="img-logo-seti">
-        <img src="../../../assets/images/logo-home.png" alt="Logo SETI S.A.S">
+    <div id="img-logo-app">
+        <img src="../../../assets/images/totoro.png" class="img-fluid" alt="Responsive image">
     </div>
     <li>
-      <a class="link-hover-bottom">
+      <a class="link-hover-bottom" [routerLink]="['/home']">
         <mat-icon aria-label="Home">home</mat-icon>
         <span>Home</span>
+      </a>
+    </li>
+    <li>
+      <a class="link-hover-bottom" [routerLink]="['/list']">
+        <mat-icon aria-label="Listado">list</mat-icon>
+        <span>Listado</span>
       </a>
     </li>
   </ul>
